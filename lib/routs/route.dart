@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/routs/rout_names.dart';
-import 'package:furnitureex/screens/home.dart';
-import 'package:furnitureex/screens/login.dart';
+import '../Homescreen/homepage.dart';
+import '../Homescreen/loginpage.dart';
+
 
 class AppRoute {
   static Route<dynamic> routesettings(RouteSettings settings) {

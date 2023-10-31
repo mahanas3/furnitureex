@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/custom_widget/custom_textfiled.dart';
+import 'package:furnitureex/provider/Furniture_Provider.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -61,7 +63,11 @@ class Login extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:
                                       Colors.white.withOpacity(0.4)),
-                              onPressed: () {},
+                              onPressed: () {
+                                context
+                                    .read<FurnitureProvider>()
+                                    .loginProvider(context);
+                              },
                               child: const Text(
                                 'Login',
                                 style: TextStyle(

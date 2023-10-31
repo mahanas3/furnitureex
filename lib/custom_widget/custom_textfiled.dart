@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 
 class CustomTextfield extends StatelessWidget {
   CustomTextfield(
-      {super.key,
-      required this.text1,
-      required this.text2,
-      required this.icon});
+      {super.key, required this.text1, required this.text2, this.icon});
 
   String text1;
   String text2;
-  Widget icon;
+  Widget? icon;
 
   @override
   Widget build(BuildContext context) {
