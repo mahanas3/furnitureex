@@ -18,7 +18,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: email == false ? '/' : '/home',
+      initialRoute: email == false ? '/' : '/bottomnavigation',
       onGenerateRoute: AppRoute.routesettings,
     );
   }

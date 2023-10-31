@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnitureex/Homescreen/bottom_navigation.dart';
 import 'package:furnitureex/routs/rout_names.dart';
 import '../Homescreen/homepage.dart';
 import '../Homescreen/loginpage.dart';
@@ -12,6 +13,9 @@ class AppRoute {
 
       case RouteName.homescreen:
         return MaterialPageRoute(builder: (context) => const Home());
+
+      case RouteName.bottomnavigation:
+        return MaterialPageRoute(builder: (context)=>const BottomNavigation());
       default:
         {
           return MaterialPageRoute(
