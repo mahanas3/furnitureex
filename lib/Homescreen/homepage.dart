@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/Homescreen/bed_screen.dart';
 import 'package:furnitureex/Homescreen/sofa_page.dart';
+import 'package:furnitureex/Homescreen/table_page.dart';
 import 'chair_page.dart';
 
 class Home extends StatefulWidget {
@@ -86,7 +87,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 height: 20,
               ),
               Container(
-                height: 200,
+                height: 170,
                 child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: images.length,
@@ -173,12 +174,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               fontSize: 20)),
                     )
                   ]),
-              Expanded(
+              const Expanded(
                 child: TabBarView(children: [
-                  Table(),
-                  const Chair(),
-                  const Sofa(),
-                  const Bed()
+                  TablePage(),
+                  Chair(),
+                  Sofa(),
+                  Bed()
                 ]),
               )
             ],
