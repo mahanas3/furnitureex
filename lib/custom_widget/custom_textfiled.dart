@@ -26,7 +26,10 @@ class CustomTextfield extends StatelessWidget {
           filled: true,
           labelText: text1,
           labelStyle: const TextStyle(
-              color: Colors.black87, fontSize: 20, fontFamily: 'popins'),
+              color: Colors.black87,
+              fontSize: 20,
+              fontFamily: 'popins',
+              fontWeight: FontWeight.bold),
           hintText: text2,
           hintStyle: const TextStyle(
               color: Colors.black87, fontFamily: 'popins', fontSize: 20),
