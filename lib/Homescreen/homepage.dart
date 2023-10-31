@@ -174,13 +174,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                               fontSize: 20)),
                     )
                   ]),
-              const Expanded(
-                child: TabBarView(children: [
-                  TablePage(),
-                  Chair(),
-                  Sofa(),
-                  Bed()
-                ]),
+              Expanded(
+                child: TabBarView(
+                    controller: _tabController,
+                    children: const [TablePage(), Chair(), Sofa(), Bed()]),
               )
             ],
           ),
