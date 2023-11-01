@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/provider/Furniture_Provider.dart';
 import 'package:furnitureex/routs/route.dart';
+import 'package:furnitureex/services/theme_services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,10 +17,22 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: email == false ? '/' : '/bottomnavigation',
-      onGenerateRoute: AppRoute.routesettings,
+
+    final firebaseProvider = context.watch<FurnitureProvider>();
+
+    final isDarkMode = firebaseProvider.isDark;
+
+    return Consumer<FurnitureProvider>(
+      builder: (BuildContext context, value, Widget? child) {
+      return MaterialApp(
+        title: 'Furnitureex',
+        themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+        darkTheme: ThemeServices.buildDarkTheme(),
+        theme: ThemeServices.buildLightTheme(),
+        debugShowCheckedModeBanner: false,
+        initialRoute: email == false ? '/' : '/bottomnavigation',
+        onGenerateRoute: AppRoute.routesettings,
+      );}
     );
   }
 }
