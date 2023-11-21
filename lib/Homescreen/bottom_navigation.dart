@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitureex/Homescreen/cart_page.dart';
-import 'package:furnitureex/Homescreen/favoueite_page.dart';
 import 'package:furnitureex/Homescreen/homepage.dart';
 import 'package:furnitureex/Homescreen/profile_page.dart';
 
@@ -18,7 +17,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const Home(),
     const Cart(),
     const Profile(),
-    const Favourite()
   ];
 
   @override
@@ -32,6 +30,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: pages[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         fixedColor: Colors.black,
         currentIndex: pageIndex,
         onTap: onitemTapped,
@@ -39,7 +38,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.home,
-                color: Colors.black87,
+                //color: Colors.black87,
               ),
               label: 'Home'),
           BottomNavigationBarItem(
@@ -48,9 +47,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
           BottomNavigationBarItem(
               icon: Icon(Icons.contacts_outlined, color: Colors.black87),
               label: 'Profile'),
-          BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.star, color: Colors.black87),
-              label: 'Favourite')
         ],
       ),
     );

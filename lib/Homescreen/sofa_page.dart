@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:furnitureex/provider/screen_provider.dart';
+import 'package:provider/provider.dart';
 
 class Sofa extends StatelessWidget {
   const Sofa({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     List tableimages = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNnHvi7VXAPua1HRu9PHkQOPKHAxrk1Q9BQ&usqp=CAU',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkaRpmSiFPome6qF4Ef5QZ5uwl3o208YdNyg&usqp=CAU',
@@ -26,7 +27,7 @@ class Sofa extends StatelessWidget {
       'zsxdcfvgbhjnzsx',
       'zsxdrctfvgybhnjm'
     ];
-    return  Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -47,12 +48,20 @@ class Sofa extends StatelessWidget {
                             SizedBox(
                               height: 130,
                               width: 120,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: NetworkImage(tableimages[index]),
-                                        fit: BoxFit.fill),
-                                    borderRadius: BorderRadius.circular(10)),
+                              child: InkWell(
+                                onTap: () {
+                                  context
+                                      .read<ScreenProvider>()
+                                      .sofaDetails(context);
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image:
+                                              NetworkImage(tableimages[index]),
+                                          fit: BoxFit.fill),
+                                      borderRadius: BorderRadius.circular(10)),
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -79,7 +88,7 @@ class Sofa extends StatelessWidget {
                                         shadowColor: Colors.grey[700],
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
-                                            BorderRadius.circular(15)),
+                                                BorderRadius.circular(15)),
                                         backgroundColor: Colors.green[800]),
                                     onPressed: () {},
                                     child: const Text('Add to cart'))
@@ -91,7 +100,7 @@ class Sofa extends StatelessWidget {
                     ));
               },
               separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(
+                  const SizedBox(
                 height: 1,
               ),
               itemCount: tableimages.length,
@@ -102,4 +111,3 @@ class Sofa extends StatelessWidget {
     );
   }
 }
-

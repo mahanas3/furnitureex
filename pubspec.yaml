@@ -89,7 +89,7 @@ flutter:
 
      - family: serif
        fonts:
-         - asset: assets/fonts/raleway.ttf
+         - asset: assets/fonts/serif.ttf
 
   #         weight: 700
   #

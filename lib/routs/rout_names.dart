@@ -4,4 +4,6 @@ class RouteName{
   static const String bottomnavigation='/bottomnavigation';
   static const String tabledetails='/tabledetails';
   static const String chairdetails='/chairdetails';
+  static const String sofadetails='/sofadetails';
+  static const String beddetails='/beddetails';
 }
