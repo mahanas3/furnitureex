@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furnitureex/provider/screen_provider.dart';
+import 'package:provider/provider.dart';
 
 class TablePage extends StatelessWidget {
   const TablePage({super.key});
@@ -47,12 +49,20 @@ class TablePage extends StatelessWidget {
                             SizedBox(
                               height: 130,
                               width: 120,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: NetworkImage(tableimages[index]),
-                                        fit: BoxFit.fill),
-                                    borderRadius: BorderRadius.circular(10)),
+                              child: InkWell(
+                                onTap: () {
+                                  context
+                                      .read<ScreenProvider>()
+                                      .tableDetails(context);
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image:
+                                              NetworkImage(tableimages[index]),
+                                          fit: BoxFit.fill),
+                                      borderRadius: BorderRadius.circular(10)),
+                                ),
                               ),
                             ),
                             const SizedBox(

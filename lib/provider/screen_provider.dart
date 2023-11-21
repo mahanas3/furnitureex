@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class FurnitureProvider extends ChangeNotifier{
+class ScreenProvider extends ChangeNotifier{
 
   bool loading = false;
 
@@ -14,5 +14,8 @@ class FurnitureProvider extends ChangeNotifier{
   set isDark(bool value) {
     _isDark = value;
     notifyListeners();
+  }
+  void tableDetails(BuildContext context){
+    Navigator.pushNamed(context, '/tabledetails');
   }
 }

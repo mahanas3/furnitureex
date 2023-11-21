@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureex/provider/Furniture_Provider.dart';
+import 'package:furnitureex/provider/screen_provider.dart';
 import 'package:furnitureex/routs/route.dart';
 import 'package:furnitureex/services/theme_services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => FurnitureProvider(),
+    create: (context) => ScreenProvider(),
     child:  Main(),));
 }
 
@@ -18,11 +18,11 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final firebaseProvider = context.watch<FurnitureProvider>();
+    final firebaseProvider = context.watch<ScreenProvider>();
 
     final isDarkMode = firebaseProvider.isDark;
 
-    return Consumer<FurnitureProvider>(
+    return Consumer<ScreenProvider>(
       builder: (BuildContext context, value, Widget? child) {
       return MaterialApp(
         title: 'Furnitureex',

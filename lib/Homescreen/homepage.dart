@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:furnitureex/Homescreen/bed_screen.dart';
 import 'package:furnitureex/Homescreen/sofa_page.dart';
 import 'package:furnitureex/Homescreen/table_page.dart';
-import 'package:furnitureex/provider/Furniture_Provider.dart';
+import 'package:furnitureex/provider/screen_provider.dart';
 import 'package:provider/provider.dart';
 import 'chair_page.dart';
 
@@ -34,18 +33,17 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ];
     return DefaultTabController(
       length: 4,
-      child: Consumer<FurnitureProvider>(
-        builder: (BuildContext context, value, Widget? child) {
+      child: Consumer<ScreenProvider>(
+          builder: (BuildContext context, value, Widget? child) {
         return Scaffold(
           appBar: AppBar(
+            backgroundColor: const Color(0x000000ff),
+            elevation: 0,
             title: Text(value!.isDark ? "Furnitureex" : "Furnitureex"),
-            actions: [
-              //FlutterSwitch(value: status, onToggle: onToggle)
-            ],
-
+            actions: const [],
           ),
           body: Padding(
-            padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
+            padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
             child: Column(
               children: [
                 Row(
@@ -194,8 +192,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ],
             ),
           ),
-        );}
-      ),
+        );
+      }),
     );
   }
 }

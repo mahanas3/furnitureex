@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/Homescreen/bottom_navigation.dart';
+import 'package:furnitureex/Homescreen/tabledetailes_screen.dart';
 import 'package:furnitureex/routs/rout_names.dart';
 import '../Homescreen/homepage.dart';
 import '../Homescreen/loginpage.dart';
-
 
 class AppRoute {
   static Route<dynamic> routesettings(RouteSettings settings) {
@@ -15,7 +15,10 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const Home());
 
       case RouteName.bottomnavigation:
-        return MaterialPageRoute(builder: (context)=>const BottomNavigation());
+        return MaterialPageRoute(
+            builder: (context) => const BottomNavigation());
+      case RouteName.tabledetails:
+        return MaterialPageRoute(builder: (context) => const TableDetails());
       default:
         {
           return MaterialPageRoute(
