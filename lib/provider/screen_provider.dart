@@ -18,4 +18,7 @@ class ScreenProvider extends ChangeNotifier{
   void tableDetails(BuildContext context){
     Navigator.pushNamed(context, '/tabledetails');
   }
+  void chairDetails(BuildContext context){
+    Navigator.pushNamed(context, '/chairdetails');
+  }
 }

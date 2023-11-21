@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureex/Homescreen/bottom_navigation.dart';
+import 'package:furnitureex/Homescreen/chairdetails_screen.dart';
 import 'package:furnitureex/Homescreen/tabledetailes_screen.dart';
 import 'package:furnitureex/routs/rout_names.dart';
 import '../Homescreen/homepage.dart';
@@ -19,6 +20,8 @@ class AppRoute {
             builder: (context) => const BottomNavigation());
       case RouteName.tabledetails:
         return MaterialPageRoute(builder: (context) => const TableDetails());
+      case RouteName.chairdetails:
+        return MaterialPageRoute(builder: (context) => const ChairDetails());
       default:
         {
           return MaterialPageRoute(
