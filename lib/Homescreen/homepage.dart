@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureex/Homescreen/bed_screen.dart';
-import 'package:furnitureex/Homescreen/sofa_page.dart';
-import 'package:furnitureex/Homescreen/table_page.dart';
 import 'package:furnitureex/provider/screen_provider.dart';
 import 'package:provider/provider.dart';
-import 'chair_page.dart';
+import '../bed_screen/bed_page.dart';
+import '../chair_screen/chair_page.dart';
+import '../sofa_screen/sofa_page.dart';
+import '../table_screen/table_page.dart';
+import 'cart_page.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -39,8 +41,27 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           appBar: AppBar(
             backgroundColor: const Color(0x000000ff),
             elevation: 0,
-            title: Text(value!.isDark ? "Furnitureex" : "Furnitureex"),
-            actions: const [],
+            title: Text(value!.isDark ? "Furnitureex" : "Furnitureex",
+                style: const TextStyle(color: Colors.black87)),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: badges.Badge(
+                    badgeContent: Text(
+                        context.watch<ScreenProvider>().cart.length.toString()),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Cart()));
+                        },
+                        icon: const Icon(
+                          Icons.notification_add_outlined,
+                          color: Colors.black87,
+                        ))),
+              ),
+            ],
           ),
           body: Padding(
             padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
@@ -77,7 +98,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ),
                     ),
-                    const Icon(Icons.notification_add_outlined),
                   ],
                 ),
                 const SizedBox(

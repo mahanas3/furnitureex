@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.0.5
   google_fonts: ^6.1.0
   flutter_switch: ^0.3.2
+  badges:
 
 dev_dependencies:
   flutter_test:

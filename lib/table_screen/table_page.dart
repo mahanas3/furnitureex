@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:furnitureex/provider/screen_provider.dart';
 import 'package:provider/provider.dart';
 
-class Chair extends StatelessWidget {
-  const Chair({super.key});
+class TablePage extends StatelessWidget {
+  const TablePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     List tableimages = [
-     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgpAMGRff08rUQtubrSir_PrVZ-_hwpAJWsw&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8dw64fhiCWNh1oJcvnqLnIW5gdTGD6Joh4Q&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtBRAfozHBltZeZTCNTxKcoAuzm3xxGzn77g&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVIWkZQN4OrUz8rYOn4aBPTglwwClOLYlqg&usqp=CAU'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrt9qTyuIUhLPbP7tfDi8T9aInYhqjDGQ3uA&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXp-dqJ-cNnvKAs1WDV9Xj96o_w6Tn6gt0w&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKa8uTG4QKBGtuaIp0cXxRfB9qWcqvCpmIkw&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNhTV8nmjtw7AVY4dD-FeNtEg-BYpITYM-LA&usqp=CAU'
     ];
 
     List title = [
@@ -28,7 +27,10 @@ class Chair extends StatelessWidget {
       'zsxdcfvgbhjnzsx',
       'zsxdrctfvgybhnjm'
     ];
-    return  Scaffold(
+
+    List price = ['\$20.00', '\$30.00', '\$80.00', '\$39.00'];
+
+    return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -49,13 +51,17 @@ class Chair extends StatelessWidget {
                             SizedBox(
                               height: 130,
                               width: 120,
-                              child: InkWell(onTap: (){
-                                context.read<ScreenProvider>().chairDetails(context);
-                              },
+                              child: InkWell(
+                                onTap: () {
+                                  context
+                                      .read<ScreenProvider>()
+                                      .tableDetails(context);
+                                },
                                 child: Container(
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                          image: NetworkImage(tableimages[index]),
+                                          image:
+                                          NetworkImage(tableimages[index]),
                                           fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(10)),
                                 ),
@@ -79,7 +85,7 @@ class Chair extends StatelessWidget {
                                   content.length > index ? content[index] : '',
                                   style: const TextStyle(fontSize: 16),
                                 ),
-                                const Text(r"$" '20.00'),
+                                Text(price[index]),
                                 ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                         shadowColor: Colors.grey[700],
@@ -87,7 +93,11 @@ class Chair extends StatelessWidget {
                                             borderRadius:
                                             BorderRadius.circular(15)),
                                         backgroundColor: Colors.green[800]),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      context.read<ScreenProvider>().addCart(
+                                          context, tableimages[index],
+                                          title[index], price[index]);
+                                    },
                                     child: const Text('Add to cart'))
                               ],
                             )
@@ -108,4 +118,3 @@ class Chair extends StatelessWidget {
     );
   }
 }
-

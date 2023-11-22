@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:furnitureex/provider/screen_provider.dart';
 import 'package:provider/provider.dart';
 
-class TablePage extends StatelessWidget {
-  const TablePage({super.key});
+class Sofa extends StatelessWidget {
+  const Sofa({super.key});
 
   @override
   Widget build(BuildContext context) {
     List tableimages = [
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrt9qTyuIUhLPbP7tfDi8T9aInYhqjDGQ3uA&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXp-dqJ-cNnvKAs1WDV9Xj96o_w6Tn6gt0w&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKa8uTG4QKBGtuaIp0cXxRfB9qWcqvCpmIkw&usqp=CAU',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNhTV8nmjtw7AVY4dD-FeNtEg-BYpITYM-LA&usqp=CAU'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNnHvi7VXAPua1HRu9PHkQOPKHAxrk1Q9BQ&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkaRpmSiFPome6qF4Ef5QZ5uwl3o208YdNyg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-NCEp5FE3ouinIIxduLG8LiN_8a8iZplVg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWWwM_hzLosCFquUv-xQiLDDRWXmqO9qe_A&usqp=CAU'
     ];
 
     List title = [
@@ -27,7 +27,6 @@ class TablePage extends StatelessWidget {
       'zsxdcfvgbhjnzsx',
       'zsxdrctfvgybhnjm'
     ];
-
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -53,13 +52,13 @@ class TablePage extends StatelessWidget {
                                 onTap: () {
                                   context
                                       .read<ScreenProvider>()
-                                      .tableDetails(context);
+                                      .sofaDetails(context);
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                           image:
-                                              NetworkImage(tableimages[index]),
+                                          NetworkImage(tableimages[index]),
                                           fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(10)),
                                 ),
@@ -89,7 +88,7 @@ class TablePage extends StatelessWidget {
                                         shadowColor: Colors.grey[700],
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(15)),
+                                            BorderRadius.circular(15)),
                                         backgroundColor: Colors.green[800]),
                                     onPressed: () {},
                                     child: const Text('Add to cart'))
@@ -101,7 +100,7 @@ class TablePage extends StatelessWidget {
                     ));
               },
               separatorBuilder: (BuildContext context, int index) =>
-                  const SizedBox(
+              const SizedBox(
                 height: 1,
               ),
               itemCount: tableimages.length,

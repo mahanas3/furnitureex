@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureex/Homescreen/beddetails_screen.dart';
 import 'package:furnitureex/Homescreen/bottom_navigation.dart';
-import 'package:furnitureex/Homescreen/chairdetails_screen.dart';
-import 'package:furnitureex/Homescreen/sofadetails_screen.dart';
-import 'package:furnitureex/Homescreen/tabledetailes_screen.dart';
+import 'package:furnitureex/Homescreen/cart_page.dart';
 import 'package:furnitureex/routs/rout_names.dart';
 import '../Homescreen/homepage.dart';
 import '../Homescreen/loginpage.dart';
+import '../bed_screen/beddetails_page.dart';
+import '../chair_screen/chairdetails_page.dart';
+import '../sofa_screen/sofadetails_page.dart';
+import '../table_screen/tabledetails_page.dart';
 
 class AppRoute {
   static Route<dynamic> routesettings(RouteSettings settings) {
@@ -28,6 +29,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => const SofaDetails());
       case RouteName.beddetails:
         return MaterialPageRoute(builder: (context) => const BedDetails());
+      case RouteName.addcart:
+        return MaterialPageRoute(builder: (context) => const Cart());
       default:
         {
           return MaterialPageRoute(

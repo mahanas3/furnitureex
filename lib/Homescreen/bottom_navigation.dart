@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:furnitureex/Homescreen/cart_page.dart';
-import 'package:furnitureex/Homescreen/homepage.dart';
 import 'package:furnitureex/Homescreen/profile_page.dart';
 
+import 'cart_page.dart';
+import 'homepage.dart';
+
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+  const BottomNavigation({Key? key});
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -26,6 +27,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[pageIndex],

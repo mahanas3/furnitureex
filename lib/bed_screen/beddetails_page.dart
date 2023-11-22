@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitureex/utilities/dimensions.dart';
 
-class TableDetails extends StatefulWidget {
-  const TableDetails({super.key});
+class BedDetails extends StatefulWidget {
+  const BedDetails({super.key});
 
   @override
-  State<TableDetails> createState() => _TableDetailsState();
+  State<BedDetails> createState() => _BedDetailsState();
 }
 
-class _TableDetailsState extends State<TableDetails> {
+class _BedDetailsState extends State<BedDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _TableDetailsState extends State<TableDetails> {
               height: Dimensions.heightCalc(context, 700),
               width: double.infinity,
               decoration: const BoxDecoration(color: Color(0xffECECEC)),
-              child: const Image(image: AssetImage('assets/images/table.png')),
+              child: const Image(image: AssetImage('assets/images/bedd.png')),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 270, left: 20, right: 15),
@@ -88,7 +88,7 @@ class _TableDetailsState extends State<TableDetails> {
                         width: Dimensions.widthCalc(context, 40),
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                          const BorderRadius.all(Radius.circular(10)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -109,7 +109,7 @@ class _TableDetailsState extends State<TableDetails> {
                         width: Dimensions.widthCalc(context, 40),
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                          const BorderRadius.all(Radius.circular(10)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -139,7 +139,7 @@ class _TableDetailsState extends State<TableDetails> {
                           alignment: Alignment.center,
                           child: Text('Add to Cart',
                               style:
-                                  TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              TextStyle(fontFamily: 'serif', fontSize: 20)),
                         ),
                       ),
                       Container(
@@ -152,7 +152,7 @@ class _TableDetailsState extends State<TableDetails> {
                           alignment: Alignment.center,
                           child: Text('Buy Now',
                               style:
-                                  TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              TextStyle(fontFamily: 'serif', fontSize: 20)),
                         ),
                       ),
                     ],

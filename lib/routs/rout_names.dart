@@ -6,4 +6,6 @@ class RouteName{
   static const String chairdetails='/chairdetails';
   static const String sofadetails='/sofadetails';
   static const String beddetails='/beddetails';
+  static const String addcart='/addcart';
+
 }
