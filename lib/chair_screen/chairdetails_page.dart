@@ -139,7 +139,7 @@ class _ChairDetailsState extends State<ChairDetails> {
                           alignment: Alignment.center,
                           child: Text('Add to Cart',
                               style:
-                              TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              TextStyle(fontFamily: 'raleway', fontSize: 20)),
                         ),
                       ),
                       Container(
@@ -152,7 +152,7 @@ class _ChairDetailsState extends State<ChairDetails> {
                           alignment: Alignment.center,
                           child: Text('Buy Now',
                               style:
-                              TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              TextStyle(fontFamily: 'raleway', fontSize: 20)),
                         ),
                       ),
                     ],

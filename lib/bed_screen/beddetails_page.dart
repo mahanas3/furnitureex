@@ -88,7 +88,7 @@ class _BedDetailsState extends State<BedDetails> {
                         width: Dimensions.widthCalc(context, 40),
                         decoration: BoxDecoration(
                           borderRadius:
-                          const BorderRadius.all(Radius.circular(10)),
+                              const BorderRadius.all(Radius.circular(10)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -109,7 +109,7 @@ class _BedDetailsState extends State<BedDetails> {
                         width: Dimensions.widthCalc(context, 40),
                         decoration: BoxDecoration(
                           borderRadius:
-                          const BorderRadius.all(Radius.circular(10)),
+                              const BorderRadius.all(Radius.circular(10)),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -138,8 +138,8 @@ class _BedDetailsState extends State<BedDetails> {
                         child: const Align(
                           alignment: Alignment.center,
                           child: Text('Add to Cart',
-                              style:
-                              TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              style: TextStyle(
+                                  fontFamily: 'raleway', fontSize: 20)),
                         ),
                       ),
                       Container(
@@ -151,8 +151,8 @@ class _BedDetailsState extends State<BedDetails> {
                         child: const Align(
                           alignment: Alignment.center,
                           child: Text('Buy Now',
-                              style:
-                              TextStyle(fontFamily: 'serif', fontSize: 20)),
+                              style: TextStyle(
+                                  fontFamily: 'raleway', fontSize: 20)),
                         ),
                       ),
                     ],
